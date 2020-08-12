@@ -8,6 +8,9 @@ import 'package:recruit_app/pages/btn_widget.dart';
 import 'package:recruit_app/pages/service/mivice_repository.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../colours.dart';
+import '../colours.dart';
+
 class BmResult extends StatefulWidget {
   Map jobInfo ;
   BmResult(this.jobInfo);
@@ -59,19 +62,19 @@ class _BmResultState extends State<BmResult> {
                 letterSpacing: 1,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.white)),
+                color: Colors.black)),
         leading: IconButton(
             icon: Image.asset(
               'images/ic_back_arrow.png',
               width: 18,
               height: 18,
-              color: Colors.white,
+              color: Colors.black,
             ),
             onPressed: () {
               Navigator.pop(context);
             }),
         automaticallyImplyLeading: false,
-        backgroundColor: Colours.app_main,
+        backgroundColor: Colors.white,
       ),
       body: Stack(
         children: <Widget>[
@@ -79,22 +82,19 @@ class _BmResultState extends State<BmResult> {
             left: 0,
             right: 0,
             child: Container(
-              height: 140,
+              height: 150,
              padding: EdgeInsets.only(top: 20),
              alignment: Alignment.topCenter,
-              color: Colours.app_main,
-              child:  Row(
+              child:  Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
 
                   Image.asset(
                     'images/bm_success.png',
-                    width: 50,
-                    height: 50,
+                    width: 70,
+                    height: 70,
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
+
                   Column(
                     mainAxisSize: MainAxisSize.min,
                       children: [
@@ -104,8 +104,8 @@ class _BmResultState extends State<BmResult> {
                                 wordSpacing: 1,
                                 letterSpacing: 1,
                                 fontSize: 17,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white)),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black)),
                         SizedBox(
                           height: 10,
                         ),
@@ -114,7 +114,7 @@ class _BmResultState extends State<BmResult> {
                                 wordSpacing: 1,
                                 letterSpacing: 1,
                                 fontSize: 12,
-                                color: Colors.white)),
+                                color: Colors.black54)),
                       ]
                   )
                 ],
@@ -125,7 +125,7 @@ class _BmResultState extends State<BmResult> {
           Positioned(
             left: 0,
             right: 0,
-            top: 100,
+            top: 160,
             bottom: 0,
             child:SingleChildScrollView(
               child:Padding(
@@ -211,8 +211,9 @@ class _BmResultState extends State<BmResult> {
                                   child: Container(
                                     padding: EdgeInsets.fromLTRB(20, 6, 20, 6),
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(40),
-                                      border: new Border.all(color:  Colors.black12, width: 1),
+                                      borderRadius: BorderRadius.circular(2),
+                                      border: new Border.all(color:  Colours.app_main, width: 0.6),
+
                                     ),
                                     child: Text(
                                       "微信号： ${wx}",
@@ -230,6 +231,7 @@ class _BmResultState extends State<BmResult> {
                                     Clipboard.setData(ClipboardData(text: wx));
                                     launch("weixin://");
                                   },
+                                  radius: 30,
                                   margin: 0,
                                   height: 40,
                                   fontSize: 12,
@@ -243,7 +245,7 @@ class _BmResultState extends State<BmResult> {
                       SizedBox(
                         height: 20,
                       ),
-                      Text('流程指导',
+                      Text('--  步骤指引  --',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -259,28 +261,29 @@ class _BmResultState extends State<BmResult> {
                         children: <Widget>[
 
                           Container(
-                            width: 80,
-                            height: 30,
+                            width: 90,
+                            height: 90,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 image:DecorationImage(
-                                    image:AssetImage("images/lc_tab.png")
+                                  image:AssetImage("images/lc_tab.png"),
+
                                 )
                             ),
                             child: Text(
-                                "流程一",
+                                "步骤一      ",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colours.app_main,
 
                                 )
                             ),
                           ),
                           SizedBox(width: 40),
                           Text(
-                            "职位报名",
+                            "兼职报名",
                             style: TextStyle(
-                              color: Colors.black87,
-
+                                color: Colors.black87,
+                                fontSize: 16
                             ),
                           )
                         ],
@@ -292,7 +295,7 @@ class _BmResultState extends State<BmResult> {
                           Image.asset("images/lc_line.png",height: 60,),
                           SizedBox(width: 60),
                           Text(
-                              "确认工作详情之后，点击报名",
+                              "查看兼职，符合条件，点击报名",
                               style: TextStyle(
                                   color: Colors.black38,
                                   fontSize: 12
@@ -303,8 +306,8 @@ class _BmResultState extends State<BmResult> {
                       Row(
                         children: <Widget>[
                           Container(
-                            width: 80,
-                            height: 30,
+                            width: 90,
+                            height: 90,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 image:DecorationImage(
@@ -312,59 +315,16 @@ class _BmResultState extends State<BmResult> {
                                 )
                             ),
                             child: Text(
-                                "流程二",
+                                "步骤二      ",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colours.app_main,
 
                                 )
                             ),
                           ),
                           SizedBox(width: 40),
                           Text(
-                            "联系企业           ",
-                            style: TextStyle(
-                              color: Colors.black87,
-
-                            ),
-                          )
-                        ],
-                      ),
-
-                      Row(
-                        children: <Widget>[
-                          Image.asset("images/lc_line.png",height: 60,),
-                          SizedBox(width: 60),
-                          Text(
-                              "主动添加微信，核实企业联系",
-                              style: TextStyle(
-                                  color: Colors.black38,
-                                  fontSize: 12
-                              )
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            width: 80,
-                            height: 30,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                image:DecorationImage(
-                                    image:AssetImage("images/lc_tab.png")
-                                )
-                            ),
-                            child: Text(
-                                "流程三",
-                                style: TextStyle(
-                                  color: Colors.white,
-
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 40),
-                          Text(
-                            "开始工作           ",
+                            "添加企业           ",
                             style: TextStyle(
                               color: Colors.black87,
 
@@ -378,7 +338,50 @@ class _BmResultState extends State<BmResult> {
                           Image.asset("images/lc_line.png",height: 60,),
                           SizedBox(width: 60),
                           Text(
-                              "双方同意工作内容，签约上班",
+                              "添加页面的企业微信号，核实企业身份！",
+                              style: TextStyle(
+                                  color: Colors.black38,
+                                  fontSize: 12
+                              )
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            width: 90,
+                            height: 90,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                image:DecorationImage(
+                                    image:AssetImage("images/lc_tab.png")
+                                )
+                            ),
+                            child: Text(
+                                "步骤三      ",
+                                style: TextStyle(
+                                  color: Colours.app_main,
+
+                                )
+                            ),
+                          ),
+                          SizedBox(width: 40),
+                          Text(
+                            "工作签约           ",
+                            style: TextStyle(
+                              color: Colors.black87,
+
+                            ),
+                          )
+                        ],
+                      ),
+
+                      Row(
+                        children: <Widget>[
+                          Image.asset("images/lc_line.png",height: 60,),
+                          SizedBox(width: 60),
+                          Text(
+                              "双方沟通，完成签约，正式上班",
                               style: TextStyle(
                                   color: Colors.black38,
                                   fontSize: 12
@@ -390,8 +393,8 @@ class _BmResultState extends State<BmResult> {
                         children: <Widget>[
 
                           Container(
-                            width: 80,
-                            height: 30,
+                            width: 90,
+                            height: 90,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 image:DecorationImage(
@@ -399,16 +402,16 @@ class _BmResultState extends State<BmResult> {
                                 )
                             ),
                             child: Text(
-                                "流程四",
+                                "步骤四      ",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colours.app_main,
 
                                 )
                             ),
                           ),
                           SizedBox(width: 40),
                           Text(
-                            "完成兼职           ",
+                            "兼职完成           ",
                             style: TextStyle(
                               color: Colors.black87,
 
@@ -423,7 +426,7 @@ class _BmResultState extends State<BmResult> {
                           Image.asset("images/lc_line.png",height: 60,color: Colors.white,),
                           SizedBox(width: 60),
                           Text(
-                              "无违约，等待企业发放薪资中",
+                              "无合同违规，等待薪资发放",
                               style: TextStyle(
                                   color: Colors.black38,
                                   fontSize: 12

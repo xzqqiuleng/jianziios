@@ -200,10 +200,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   fetchData()  {
 
       setState(() {
-          BannerModel bannerModel1 = BannerModel(imageUrl: "http://116.62.45.24/imgs/head/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200716203705.jpg",link: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3778115985,3313781102&fm=26&gp=0.jpg");
-          BannerModel bannerModel2 = BannerModel(imageUrl: "http://116.62.45.24/imgs/head/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200716203716.png");
+          BannerModel bannerModel1 = BannerModel(imageUrl: "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=196122810,216465074&fm=26&gp=0.jpg",link: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3778115985,3313781102&fm=26&gp=0.jpg");
         this.topBannerDatas.add(bannerModel1);
-        this.topBannerDatas.add(bannerModel2);
+
 
 
         TopicTabModel tabModel1 = TopicTabModel(picture: "images/mid_2.png",link: "网上兼职",img:"images/mid_2.png",txt: "在家也能赚钱！" );

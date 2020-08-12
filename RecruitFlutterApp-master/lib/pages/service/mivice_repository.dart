@@ -203,9 +203,10 @@ class MiviceRepository{
     return response;
   }
   Future postTencentData(String actionType,String imei) async {
-    var response = await dio.get<Map>('/banner/userActionAdd11', queryParameters: {
+    var response = await dio.get<Map>('/banner/userActionAdd', queryParameters: {
       "imei":imei,
-      "actionType":actionType
+      "actionType":actionType,
+      "type":"ios"
     });
     return response;
   }

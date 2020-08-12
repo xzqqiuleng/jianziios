@@ -17,6 +17,8 @@ import 'package:recruit_app/pages/utils/com_save.dart';
 import 'package:recruit_app/pages/utils/jz_no.dart';
 import 'package:recruit_app/pages/utils/jz_save.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../colours.dart';
+import '../../colours.dart';
 import '../constant.dart';
 import '../event_heper.dart';
 import '../share_helper.dart';
@@ -213,11 +215,11 @@ class _MeJzState extends State<MeJz> {
         child: Column(
           children: <Widget>[
             Container(
-              height: 260,
+              height: 200,
               child:Stack(
                   children: [
                     Container(
-                      height: 200,
+                      height: 140,
                       padding: EdgeInsets.only(
                           left: ScreenUtil().setWidth(48),
                           right: ScreenUtil().setWidth(48),
@@ -296,142 +298,7 @@ class _MeJzState extends State<MeJz> {
                           SizedBox(
                             height: ScreenUtil().setWidth(70),
                           ),
-                          Row(
-                            children: <Widget>[
-                              Expanded(
-                                flex: 1,
-                                child: GestureDetector(
-                                  behavior: HitTestBehavior.opaque,
-                                  child: Column(
-                                    children: <Widget>[
-                                      Text(
-                                        num.toString(),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                          fontSize: ScreenUtil().setSp(36),
-                                        ),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        '已报名',
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          color: Color.fromRGBO(227, 226, 226, 1),
-                                          fontSize: ScreenUtil().setSp(24),
-                                        ),
-                                      ),
 
-                                    ],
-                                  ),
-                                  onTap: () {
-                                    if(ShareHelper.isLogin()){
-                                      Navigator.push(context,MaterialPageRoute(builder: (context)=>JZSave("已报名"),),);
-                                    }else{
-                                      Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
-                                    }
-
-
-                                  },
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.symmetric(
-                                  horizontal: ScreenUtil().setWidth(10),
-                                ),
-                                width: ScreenUtil().setWidth(1),
-                                height: ScreenUtil().setHeight(28),
-                                color: Colors.white,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: GestureDetector(
-                                  behavior: HitTestBehavior.opaque,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        '0',
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                          fontSize: ScreenUtil().setSp(36),
-                                        ),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        '已录取',
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          color: Color.fromRGBO(227, 226, 226, 1),
-                                          fontSize: ScreenUtil().setSp(24),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  onTap: () {
-                                    if(ShareHelper.isLogin()){
-                                      Navigator.push(context,MaterialPageRoute(builder: (context)=>JZNo("已录取"),),);
-                                    }else{
-                                      Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
-                                    }
-                                  },
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.symmetric(
-                                  horizontal: ScreenUtil().setWidth(10),
-                                ),
-                                width: ScreenUtil().setWidth(1),
-                                height: ScreenUtil().setHeight(28),
-                                color: Colors.white,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: GestureDetector(
-                                  behavior: HitTestBehavior.opaque,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: <Widget>[
-                                      Text(
-                                        '0',
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                          fontSize: ScreenUtil().setSp(36),
-                                        ),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        '已拒绝',
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          color: Color.fromRGBO(227, 226, 226, 1),
-                                          fontSize: ScreenUtil().setSp(24),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  onTap: () {
-                                    if(ShareHelper.isLogin()){
-                                      Navigator.push(context,MaterialPageRoute(builder: (context)=>JZNo("已拒绝"),),);
-                                    }else{
-                                      Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
-                                    }
-                                  },
-                                ),
-                              ),
-                            ],
-                          )
                         ],
                       ),
                     ),
@@ -439,59 +306,198 @@ class _MeJzState extends State<MeJz> {
                       bottom: 0,
                       left: 14,
                       right: 14,
-                      child: GestureDetector(
-
-                        onTap: (){
-                          if(ShareHelper.isLogin()){
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>MineJL(),),);
-                          }else{
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
-                          }
-                    },
-                      child:Card(
-                        elevation: 0.2,
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)
-                        ),
+                      child:  Card(
                         child: Row(
                           children: <Widget>[
                             Expanded(
-                                child:  Text(
-                                  "   优秀的简历，精准的推荐",
-                                  style: TextStyle(
-                                      letterSpacing: 2,
-                                      wordSpacing: 2,
-                                      fontWeight: FontWeight.w100
-                                  ),
-                                )
+                              flex: 1,
+                              child: GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                child: Column(
+                                  children: <Widget>[
+                                    SizedBox(height: 20,),
+                                    Text(
+                                      num.toString(),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                        fontSize: ScreenUtil().setSp(36),
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      '已报名',
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: ScreenUtil().setSp(24),
+                                      ),
+                                    ),
+                                    SizedBox(height: 20,),
+                                  ],
+                                ),
+                                onTap: () {
+                                  if(ShareHelper.isLogin()){
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>JZSave("已报名"),),);
+                                  }else{
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
+                                  }
+
+
+                                },
+                              ),
                             ),
                             Container(
-                              height: 30,
-                              width: 70,
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.fromLTRB(16,20,14,20),
-                              decoration: BoxDecoration(
-                                  color: Colors.redAccent,
-                                  borderRadius: BorderRadius.circular(4)
+                              margin: EdgeInsets.symmetric(
+                                horizontal: ScreenUtil().setWidth(10),
                               ),
-                              child: Text(
-                                "编辑简历",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12
+                              width: ScreenUtil().setWidth(1),
+                              height: ScreenUtil().setHeight(28),
+                              color: Colors.white,
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      '0',
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                        fontSize: ScreenUtil().setSp(36),
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      '已录取',
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: ScreenUtil().setSp(24),
+                                      ),
+                                    ),
+                                  ],
                                 ),
+                                onTap: () {
+                                  if(ShareHelper.isLogin()){
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>JZNo("已录取"),),);
+                                  }else{
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
+                                  }
+                                },
                               ),
-                            )
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(
+                                horizontal: ScreenUtil().setWidth(10),
+                              ),
+                              width: ScreenUtil().setWidth(1),
+                              height: ScreenUtil().setHeight(28),
+                              color: Colors.white,
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: <Widget>[
+                                    Text(
+                                      '0',
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                        fontSize: ScreenUtil().setSp(36),
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      '已拒绝',
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: ScreenUtil().setSp(24),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                onTap: () {
+                                  if(ShareHelper.isLogin()){
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>JZNo("已拒绝"),),);
+                                  }else{
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
+                                  }
+                                },
+                              ),
+                            ),
                           ],
-                        ),
-                      ),
+                        )
                       )
+
                     )
                   ],
 
               ),
             ),
-
+//            GestureDetector(
+//
+//              onTap: (){
+//                if(ShareHelper.isLogin()){
+//                  Navigator.push(context,MaterialPageRoute(builder: (context)=>MineJL(),),);
+//                }else{
+//                  Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
+//                }
+//              },
+//              child:Card(
+//                elevation: 0.2,
+//                color: Colors.white,
+//                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)
+//                ),
+//                child: Row(
+//                  children: <Widget>[
+//                    Expanded(
+//                        child:  Text(
+//                          "   优秀的简历，精准的推荐",
+//                          style: TextStyle(
+//                              letterSpacing: 2,
+//                              wordSpacing: 2,
+//                              fontWeight: FontWeight.w100
+//                          ),
+//                        )
+//                    ),
+//                    Container(
+//                      height: 30,
+//                      width: 70,
+//                      alignment: Alignment.center,
+//                      margin: EdgeInsets.fromLTRB(16,20,14,20),
+//                      decoration: BoxDecoration(
+//                          color: Colors.redAccent,
+//                          borderRadius: BorderRadius.circular(4)
+//                      ),
+//                      child: Text(
+//                        "编辑简历",
+//                        style: TextStyle(
+//                            color: Colors.white,
+//                            fontSize: 12
+//                        ),
+//                      ),
+//                    )
+//                  ],
+//                ),
+//              ),
+//            ),
 ////           Row(
 //             children: <Widget>[
 //               SizedBox(width: 16,),
@@ -509,6 +515,39 @@ class _MeJzState extends State<MeJz> {
             Row(
               children: <Widget>[
                 Expanded(
+                    flex: 1,
+                    child:GestureDetector(
+                      onTap: (){
+                        if(ShareHelper.isLogin()){
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>MineJL(),),);
+                        }else{
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPdPage(),),);
+                        }
+                      },
+                      behavior: HitTestBehavior.opaque,
+                      child: Column(
+                        children: <Widget>[
+                          Image.asset("images/mm1.png",height: 40,width: 40),
+                          SizedBox(height: 6,),
+
+                          Text(
+                            "编辑简历",
+                            style: TextStyle(
+
+                                fontSize: 16
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    )
+                ),
+                Container(
+                  height: 24,
+                  width: 1,
+                  color: Colours.app_main.withOpacity(0.5),
+                ),
+                Expanded(
                   flex: 1,
                   child:GestureDetector(
                     onTap: (){
@@ -519,37 +558,27 @@ class _MeJzState extends State<MeJz> {
                       }
                     },
                     behavior: HitTestBehavior.opaque,
-                    child: Row(
+                    child: Column(
                       children: <Widget>[
-                        SizedBox(width: 16,),
-                        Image.asset("images/love.png",height: 40,width: 40),
-                        SizedBox(width: 16,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
+                        Image.asset("images/mm3.png",height: 40,width: 40),
+                        SizedBox(height: 6,),
+
                             Text(
                               "兼职收藏",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
 
+                                 fontSize: 16
                               ),
                             ),
-                            SizedBox(
-                              height: 7,
-                            ),
-                            Text(
-                              "你感兴趣的兼职",style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w100
-                            ),
-                            )
-                          ],
-                        ),
+
                       ],
                     ),
                   )
+                ),
+                Container(
+                  height: 24,
+                  width: 1,
+                  color: Colours.app_main.withOpacity(0.5),
                 ),
                 Expanded(
                   flex: 1,
@@ -562,34 +591,20 @@ class _MeJzState extends State<MeJz> {
                       }
                     },
                     behavior: HitTestBehavior.opaque,
-                    child: Row(
+                    child: Column(
                       children: <Widget>[
-                        SizedBox(width: 16,),
-                        Image.asset("images/sub.png",height: 40,width: 40),
-                        SizedBox(width: 16,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
+
+                        Image.asset("images/mm2.png",height: 40,width: 40),
+                        SizedBox(height: 6,),
                             Text(
                               "公司关注",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                              fontSize: 16
 
                               ),
                             ),
-                            SizedBox(
-                              height: 7,
-                            ),
-                            Text(
-                              "公司职位不遗漏",style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w100
-                            ),
-                            ),
-                          ],
-                        ),
+
+
                       ],
                     ),
                   )
@@ -620,6 +635,7 @@ class _MeJzState extends State<MeJz> {
                                   options[index].imgPath,
                                   width: ScreenUtil().setWidth(40),
                                   height: ScreenUtil().setWidth(40),
+                                  color: Colours.app_main.withOpacity(0.5),
                                   fit: BoxFit.cover,
                                 ),
                                 SizedBox(
@@ -654,6 +670,7 @@ class _MeJzState extends State<MeJz> {
                                   'images/img_arrow_right_blue.png',
                                   width: ScreenUtil().setWidth(10),
                                   height: ScreenUtil().setWidth(20),
+                                  color: Colours.app_main.withOpacity(0.5),
                                   fit: BoxFit.cover,
                                 )
                               ],

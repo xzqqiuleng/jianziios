@@ -123,6 +123,7 @@ class _NewSettingState extends State<NewSetting> {
                       width: ScreenUtil().setWidth(40),
                       height: ScreenUtil().setWidth(40),
                       fit: BoxFit.cover,
+                      color: Colours.app_main.withOpacity(0.5),
                     ),
                     SizedBox(
                       width: ScreenUtil().setWidth(20),
@@ -157,6 +158,7 @@ class _NewSettingState extends State<NewSetting> {
                       width: ScreenUtil().setWidth(10),
                       height: ScreenUtil().setWidth(20),
                       fit: BoxFit.cover,
+                      color: Colours.app_main.withOpacity(0.5),
                     )
                   ],
                 ),

@@ -9,13 +9,8 @@ import 'package:recruit_app/colours.dart';
 import 'package:recruit_app/pages/account/register/login_pd_page.dart';
 import 'package:recruit_app/pages/bm_result.dart';
 import 'package:recruit_app/pages/companys/company_detail.dart';
-import 'package:recruit_app/pages/constant.dart';
-import 'package:recruit_app/pages/jobs/chat_room.dart';
 import 'package:recruit_app/pages/service/mivice_repository.dart';
 import 'package:recruit_app/pages/share_helper.dart';
-import 'package:recruit_app/widgets/dash_line.dart';
-import 'job_row_item.dart';
-
 class JobDetail extends StatefulWidget {
   int id;
   String url;

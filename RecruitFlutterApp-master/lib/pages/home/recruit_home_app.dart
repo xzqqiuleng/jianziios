@@ -60,7 +60,9 @@ class _RecruitHomeState extends State<RecruitHomeApp> {
           fit: BoxFit.contain,
         ),
       ),
-      title: Text('找兼职'),
+      title: Text('兼职大厅',style: TextStyle(
+          fontSize: 12
+      ),),
     ),
     BottomNavigationBarItem(
       icon: Padding(
@@ -81,7 +83,9 @@ class _RecruitHomeState extends State<RecruitHomeApp> {
           fit: BoxFit.contain,
         ),
       ),
-      title: Text('精选'),
+      title: Text('精选专栏',style: TextStyle(
+        fontSize: 12
+      ),),
     ),
     BottomNavigationBarItem(
       icon: Padding(
@@ -102,7 +106,9 @@ class _RecruitHomeState extends State<RecruitHomeApp> {
           fit: BoxFit.contain,
         ),
       ),
-      title: Text('我的'),
+      title: Text('我的',style: TextStyle(
+          fontSize: 12
+      ),),
     ),
   ];
 

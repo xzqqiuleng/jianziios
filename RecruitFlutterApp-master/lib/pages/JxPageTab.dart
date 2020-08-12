@@ -22,10 +22,11 @@ class JXPageTab extends StatefulWidget {
 class _JXPageTabState extends State<JXPageTab> {
 
   List<String> images =["images/zt_a1.png","images/zt_a2.png","images/zt_a3.png","images/zt_a4.png","images/zt_a5.png"];
-  List<String> imageZs =["images/zt1.jpg","images/zt2.png","images/zt3.png","images/zt4.jpg"];
+  List<String> bgs =["images/h_bt1.png","images/h_bt2.png"];
+  List<String> imageZs =["images/bg2.jpg","images/bg1.jpg","images/bg4.jpg","images/bg3.jpg"];
   List<String> txt=["周末兼职","模特T台","主播聊天","学生校园","抖音视频"];
-  List<String> txtS=["校内兼职推荐","线上兼职专场","兼职赚钱攻略","潮兼职，等你来"];
-  List<String> txDesc=["校内兼职每周更新，专为学生打造的专栏","线上兼职聚集地，在家也能完成的兼职工作","小编精选，快速兼职赚钱新套路","潮兼职，新潮流，不一样的奇妙兼职工作"];
+  List<String> txtS=["  校内兼职专题","  线上兼职专题","  兼职赚钱专题","  特色兼职赚题"];
+  List<String> txDesc=["   校内兼职汇总，专为大学生打造的专题","   在家就能完成兼职，让你足不出户赚工资","   小编推荐专题，精心挑选性价比高的兼职","   特色兼职，我就是要和别人不同，我的工作也是一种特色"];
 
 
 
@@ -88,6 +89,8 @@ class _JXPageTabState extends State<JXPageTab> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
               onTap: (){
@@ -111,74 +114,154 @@ class _JXPageTabState extends State<JXPageTab> {
                 }
               },
               behavior: HitTestBehavior.opaque,
-              child: Container(
-                height: 100,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-//                image: AssetImage("images/zt_top.jpg"),
-                        image:  NetworkImage(getUrl()),
-                        fit: BoxFit.fill
-                    )
+              child: Card(
+                elevation: 2,
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
                 ),
-              ),
+                child: Container(
+                  height: 140,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      image: DecorationImage(
+//                image: AssetImage("images/zt_top.jpg"),
+                          image:  NetworkImage(getUrl()),
+                          fit: BoxFit.fill
+                      )
+                  ),
+                ),
+              )
             ),
 
             SizedBox(
               height: 16,
             ),
-            GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount:5 ,//每行三列
-                    childAspectRatio: 1.0 //显示区域宽高相等
-                ),
-                itemCount: images.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  //如果显示到最后一个并且Icon总数小于200时继续获取数据
-                  return  GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTap: (){
-                      String surl;
-                      switch(index){
-                        case 0:
-                           surl ="http://www.zaojiong.com/job/?c=search&keyword=%E5%91%A8%E6%9C%AB&minsalary=&maxsalary=";
-                          break;
-                        case 1:
-                          surl ="http://www.zaojiong.com/job/?c=search&keyword=%E6%A8%A1%E7%89%B9&minsalary=&maxsalary=";
-                          break;
-                        case 2:
-                          surl ="http://www.zaojiong.com/job/?c=search&keyword=%E4%B8%BB%E6%92%AD&minsalary=&maxsalary=";
-                          break;
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+               Text(
+                 "--  小编精选  --",
+                 style: TextStyle(
+                   fontSize: 20,
+                   fontWeight: FontWeight.bold,
+                   color: Colors.black
+                 ),
+               )
+              ],
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 10),
+              child:   GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount:3 ,//每行三列
+                      childAspectRatio: 1.4 //显示区域宽高相等
+                  ),
+                  itemCount: images.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    //如果显示到最后一个并且Icon总数小于200时继续获取数据
+                    return  GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: (){
+                        String surl;
+                        switch(index){
+                          case 0:
+                            surl ="http://www.zaojiong.com/job/?c=search&keyword=%E5%91%A8%E6%9C%AB&minsalary=&maxsalary=";
+                            break;
+                          case 1:
+                            surl ="http://www.zaojiong.com/job/?c=search&keyword=%E6%A8%A1%E7%89%B9&minsalary=&maxsalary=";
+                            break;
+                          case 2:
+                            surl ="http://www.zaojiong.com/job/?c=search&keyword=%E4%B8%BB%E6%92%AD&minsalary=&maxsalary=";
+                            break;
 
-                        case 3:
-                          surl ="http://www.zaojiong.com/job/?c=search&keyword=%E5%AD%A6%E7%94%9F&minsalary=&maxsalary=";
-                          break;
+                          case 3:
+                            surl ="http://www.zaojiong.com/job/?c=search&keyword=%E5%AD%A6%E7%94%9F&minsalary=&maxsalary=";
+                            break;
 
-                        case 4:
-                          surl ="http://www.zaojiong.com/job/?c=search&keyword=%E5%A8%B1%E4%B9%90%E4%B8%BB%E6%92%AD&minsalary=&maxsalary=";
-                          break;
-                      }
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => JzTitl(  txt[index],surl)));
-                    },
-                    child:Column(
-                      children: [
-                        Image.asset(images[index],width: 40,height: 40,),
-                        SizedBox(
-                          height: 8,
+                          case 4:
+                            surl ="http://www.zaojiong.com/job/?c=search&keyword=%E5%A8%B1%E4%B9%90%E4%B8%BB%E6%92%AD&minsalary=&maxsalary=";
+                            break;
+                        }
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => JzTitl(  txt[index],surl)));
+                      },
+//                    child:Column(
+//                      children: [
+//                        Image.asset(images[index],width: 40,height: 40,),
+//                        SizedBox(
+//                          height: 8,
+//                        ),
+//                        Text(
+//                          txt[index],
+//
+//                        ),
+//
+//                      ],
+//                    ),
+                      child:   Container(
+                        margin: EdgeInsets.fromLTRB(0, 0,10, 10),
+                        height: 80,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(bgs[index % 2]),
+                            fit: BoxFit.fill,
+                          ),
+                          borderRadius: BorderRadius.circular(4),
                         ),
-                        Text(
-                          txt[index],
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: <Widget>[
+                            Positioned(
+                              top:20,
+                              child: Text(
+                                txt[index],
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
 
+                                ),
+                              ),
+                            ),
+
+                            Positioned(
+                              right: 6,
+                              bottom:6,
+                              child: Image.asset(images[index],height: 20,width: 20,),
+                            ),
+                          ],
                         ),
-
-                      ],
-                    ),
-                  );
-                }
+                      ),
+                    );
+                  }
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "--  专栏推荐  --",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 16,
             ),
             ListView.builder(itemBuilder:(context, index) {
 
@@ -190,52 +273,52 @@ class _JXPageTabState extends State<JXPageTab> {
                          MaterialPageRoute(
                              builder: (context) => JZJXPage(index)));
                    },
-                   child: Padding(
-                       padding: EdgeInsets.all(12),
-                       child: Column(
-                           mainAxisAlignment: MainAxisAlignment.start,
-                           crossAxisAlignment: CrossAxisAlignment.stretch,
-                           children: [
-                             Container(
-                               margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                               height: 120,
-                               decoration: BoxDecoration(
-                                 image: DecorationImage(
-                                   image: AssetImage(imageZs[index]),
-                                   fit: BoxFit.fill,
+                   child:Card(
+                     margin:EdgeInsets.all(12) ,
+                     child: Padding(
+                         padding: EdgeInsets.all(0),
+                         child: Column(
+                             mainAxisAlignment: MainAxisAlignment.start,
+                             crossAxisAlignment: CrossAxisAlignment.stretch,
+                             children: [
+                               Container(
+                                 margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                 height: 120,
+                                 decoration: BoxDecoration(
+                                   image: DecorationImage(
+                                     image: AssetImage(imageZs[index]),
+                                     fit: BoxFit.fill,
+                                   ),
+                                   borderRadius: BorderRadius.circular(4),
                                  ),
-                                 borderRadius: BorderRadius.circular(4),
                                ),
-                             ),
-                             SizedBox(
-                               height: 2,
-                             ),
-                             Text(
-                               txtS[index],
-                               style: TextStyle(
-                                   fontSize: 16,
-                                   fontWeight: FontWeight.bold
+                               SizedBox(
+                                 height: 2,
                                ),
-                             ),
-                             SizedBox(
-                               height: 2,
-                             ),
-                             Text(
-                               txDesc[index],
-                               style: TextStyle(
-                                   fontSize: 12,
-                                   color: Colors.grey
+                               Text(
+                                 txtS[index],
+                                 style: TextStyle(
+                                     fontSize: 16,
+                                     fontWeight: FontWeight.bold
+                                 ),
                                ),
-                             ),
-                             SizedBox(
-                               height: 10,
-                             ),
-                             Container(
-                               height: 4,
-                               color: Color(0xfff0f0f0),
-                             )
-                           ]
-                       )
+                               SizedBox(
+                                 height: 2,
+                               ),
+                               Text(
+                                 txDesc[index],
+                                 style: TextStyle(
+                                     fontSize: 12,
+                                     color: Colors.grey
+                                 ),
+                               ),
+                               SizedBox(
+                                 height: 10,
+                               ),
+
+                             ]
+                         )
+                     )
                    )
                  );
              },
