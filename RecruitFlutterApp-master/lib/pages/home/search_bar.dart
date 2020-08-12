@@ -22,8 +22,8 @@ class _SearchBarState extends State<SearchBar> {
 
         height: widget.height,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(widget.height * 0.5),
-          color: widget.backgroudColor,
+          borderRadius: BorderRadius.circular(4),
+          color: Color(0xfff0f0f0),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

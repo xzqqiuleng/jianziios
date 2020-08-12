@@ -84,31 +84,28 @@ class _HomeJobListState extends State<HomeJobList> with SingleTickerProviderStat
 
                      Container(
                        alignment: Alignment.center,
-                       width: 50,
+                       width: 60,
                        height: 24,
-                       decoration: BoxDecoration(
-                           color: Colours.app_main.withOpacity(0.2),
-                         borderRadius: BorderRadius.circular(2)
-                       ),
                        child: Text(
                            "薪资",
                          style: TextStyle(
                            color: Colours.app_main,
-                           fontSize: 12
+                           fontSize: 12,
+                           fontWeight: FontWeight.bold
                          ),
                        ),
                      ),
                      Positioned(
                        bottom: 4,
                        right: 4,
-                       child: Image.asset("images/sanjiao.png",width: 5,height: 5,),
+                       child: Image.asset("images/arrow_dpwn.png",width: 10,height: 10,),
                      )
                    ],
                  ),
                ),
              ),
              SizedBox(
-               width: 16,
+               width: 2,
              ),
              GestureDetector(
                onTap: ()=>Navigator.push(
@@ -122,24 +119,22 @@ class _HomeJobListState extends State<HomeJobList> with SingleTickerProviderStat
 
                      Container(
                        alignment: Alignment.center,
-                       width: 50,
+                       width: 60,
                        height: 24,
-                       decoration: BoxDecoration(
-                           color: Colours.app_main.withOpacity(0.2),
-                           borderRadius: BorderRadius.circular(2)
-                       ),
+
                        child: Text(
                          "学历",
                          style: TextStyle(
                              color: Colours.app_main,
-                             fontSize: 12
+                             fontSize: 12,
+                             fontWeight: FontWeight.bold
                          ),
                        ),
                      ),
                      Positioned(
                        bottom: 4,
                        right: 4,
-                       child: Image.asset("images/sanjiao.png",width: 5,height: 5,),
+                       child: Image.asset("images/arrow_dpwn.png",width: 10,height: 10,),
                      )
                    ],
                  ),

@@ -105,6 +105,7 @@ class _JobBodyState extends State<JobBody> with SingleTickerProviderStateMixin{
         ],
         controller: _tabController,
       ),
+      backgroundColor: Color(0xfff8f8f8),
     );
   }
 

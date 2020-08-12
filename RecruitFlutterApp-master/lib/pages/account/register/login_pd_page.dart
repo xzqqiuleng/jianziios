@@ -85,6 +85,13 @@ class _LoginPdState extends State<LoginPdPage>{
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
+                              Text("登  录",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold
+                              ),
+                              ),
                               SizedBox(height: 50),
                               LogRegTextField(
 
@@ -99,7 +106,7 @@ class _LoginPdState extends State<LoginPdPage>{
                               SizedBox(height: 30),
                               LogRegTextField(
 
-                                label: "请输入密码",
+                                label: "密码",
                                 controller:  _PdController,
                                 textInputAction: TextInputAction.next,
                                 textInputType: TextInputType.text,
@@ -114,30 +121,7 @@ class _LoginPdState extends State<LoginPdPage>{
                                 child: Stack(
 
                                   children: <Widget>[
-                                    Positioned(
-                                      left: 0,
-                                      child: GestureDetector(
-                                        onTap:()async{
-                                       var result =  await Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => RegPage(),
-                                              ));
-                                          if(result != null && result == true){
-                                            Navigator.of(context).pop();
-                                          }
-                                        },
-                                        child: Text(
-                                          "注册账号",
-                                          style: TextStyle(
 
-                                              fontSize: 16,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold
-                                          ),
-                                        ) ,
-                                      ),
-                                    ),
                                     Positioned(
                                         height: 20,
                                         right: 0,
@@ -150,7 +134,7 @@ class _LoginPdState extends State<LoginPdPage>{
                                           child:Text(
                                             "忘记密码？",
                                             style: TextStyle(
-
+                                                fontWeight: FontWeight.bold,
                                                 fontSize: 13,
                                                 color: Colours.app_main
                                             ),
@@ -174,7 +158,7 @@ class _LoginPdState extends State<LoginPdPage>{
                                 child: Card(
                                     color: Colours.app_main,
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(6)
+                                        borderRadius: BorderRadius.circular(30)
                                     ),
                                     child: Center(
                                       child:Text("登录",
@@ -182,7 +166,7 @@ class _LoginPdState extends State<LoginPdPage>{
 
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 15,
+                                            fontSize: 16,
                                             fontWeight: FontWeight.bold
                                         ),
                                       ),
@@ -191,7 +175,31 @@ class _LoginPdState extends State<LoginPdPage>{
 
                                 ),
                               )
-                     )
+                     ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              GestureDetector(
+                                onTap:()async{
+                                  var result =  await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => RegPage(),
+                                      ));
+                                  if(result != null && result == true){
+                                    Navigator.of(context).pop();
+                                  }
+                                },
+                                child: Text(
+                                  "没有账号？  立即注册",
+                                  style: TextStyle(
+
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                ) ,
+                              ),
                             ],
                           ),
                         )
@@ -276,7 +284,7 @@ class BottomXY extends StatelessWidget{
           ),
           TextSpan(
             recognizer: _tapGestureRecognizer2,
-            text: "隐私政策",
+            text: "隐私政策，",
             style: TextStyle(
                 color: Colours.app_main,
                 fontSize: 12,
@@ -286,7 +294,7 @@ class BottomXY extends StatelessWidget{
           ),
           TextSpan(
 
-            text: "并授权使用您的帐户信息(如昵称、头像、等)进行统一管理",
+            text: "并授权APP使用您的帐户信息！",
             style: TextStyle(
                 color: Colours.gray_8A8F8A,
                 fontSize: 12,

@@ -206,8 +206,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         this.topBannerDatas.add(bannerModel2);
 
 
-        TopicTabModel tabModel1 = TopicTabModel(picture: "images/h_bt1.png",link: "网上兼职",img:"images/bq1.png",txt: "在家也能赚钱！" );
-        TopicTabModel tabModel2 = TopicTabModel(picture: "images/h_bt2.png",link: "线下兼职",img:"images/bq2.png",txt: "高薪兼职推荐！");
+        TopicTabModel tabModel1 = TopicTabModel(picture: "images/mid_2.png",link: "网上兼职",img:"images/mid_2.png",txt: "在家也能赚钱！" );
+        TopicTabModel tabModel2 = TopicTabModel(picture: "images/mid_1.png",link: "线下兼职",img:"images/mid_1.png",txt: "高薪兼职推荐！");
 
         this.topicTabMenus.add(tabModel1);
         this.topicTabMenus.add(tabModel2);

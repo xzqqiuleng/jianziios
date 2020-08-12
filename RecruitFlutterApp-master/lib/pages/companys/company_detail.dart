@@ -228,15 +228,14 @@ class _CompanyDetailState extends State<CompanyDetail> {
                   'images/ic_action_back_white.png',
                   width: 24,
                   height: 24,
+            color: Colors.black,
                 ),
                 onPressed: () {
                   Navigator.pop(context);
                 }),
             automaticallyImplyLeading: false,
             centerTitle: true,
-            brightness: Brightness.dark,
-            iconTheme: IconThemeData(color: Colors.black87),
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.white,
             title: Text(
               '公司详情',
               maxLines: 1,
@@ -246,7 +245,7 @@ class _CompanyDetailState extends State<CompanyDetail> {
                 letterSpacing: 1,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             actions: <Widget>[
@@ -255,7 +254,7 @@ class _CompanyDetailState extends State<CompanyDetail> {
                     'images/ic_action_report_black.png',
                     width: 24,
                     height: 24,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   onPressed: () {
 
@@ -276,71 +275,54 @@ class _CompanyDetailState extends State<CompanyDetail> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Card(
-                        elevation: 1,
-
-                        child: Container(
-                          height:180,
-                          child: Stack(
-                            children: <Widget>[
-                               Positioned(
-                                 left: 76,
-                                 top: 22,
-                                 right: 90,
-                                 child:  Text( infors == null?"": infors["name"],
-                                     maxLines: 2,
-                                     overflow: TextOverflow.ellipsis,
-                                     style: const TextStyle(
-                                         wordSpacing: 1,
-                                         letterSpacing: 1,
-                                         fontSize: 16,
-                                         fontWeight: FontWeight.bold,
-                                         color: Colors.black87)),
-                               ),
-                              Positioned(
-                                left: 16,
-                                top: 20,
-                                child:  ClipRRect(
-                                  borderRadius: BorderRadius.all(Radius.circular(4)),
-                                  child: Image.network(
-                                    "http://www.zaojiong.com/data/logo/20170418/14906489056.PNG",
-                                      width: 50,
-                                      height: 50,
-                                      fit: BoxFit.fill),
-                                ),
-                              ),
-                              Positioned(
-                                left: 76,
-                                top: 60,
-                                child:Row(
-                                  children: <Widget>[
-
-                                    Text(
-                                      labelStr,
-                                      style: TextStyle(
-                                        fontSize: ScreenUtil().setSp(22),
-                                        color: Color.fromRGBO(151, 151, 151,6),
+               Row(
+                                mainAxisSize: MainAxisSize.max,
+                 mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                                    child: Image.network(
+                                        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597232775964&di=d3fd1fe74b17fc77bcb77010fdd162a1&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F00%2F96%2F26%2F8556f2fbfab5f14.jpg",
+                                        width: 50,
+                                        height: 50,
+                                        fit: BoxFit.fill),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment:CrossAxisAlignment.start ,
+                                    children: <Widget>[
+                                      Text( infors == null?"": infors["name"],
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: const TextStyle(
+                                              wordSpacing: 1,
+                                              letterSpacing: 1,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black87)),
+                                      SizedBox(
+                                        height: 4,
                                       ),
-                                    ),
-                                  ],
-                                )),
-                              Positioned(
-                                right: 4,
-                                top: 4,
-                                child: Image.asset('images/jz_rz.png',
-                                    width: ScreenUtil().setWidth(94),
-                                    height: ScreenUtil().setWidth(34),
-                                    fit: BoxFit.cover),
+                                      Image.asset('images/qytg.png',
+                                          width: ScreenUtil().setWidth(150),
+                                          height: ScreenUtil().setWidth(34),
+                                          fit: BoxFit.cover),
+                                    ],
+                                  )
+                                ],
                               ),
-                              Positioned(
-                                bottom: 20,
-                                left:16,
-                                right: 16,
-                                child: Container(
-                                  height: 60,
+                         SizedBox(
+                           height: 16,
+                         ),
+                         Container(
+
+                                  height: 100,
                                   decoration: BoxDecoration(
-                                    color: Color(0xfff8f8f8),
-                                    borderRadius: BorderRadius.circular(4)
+                                      color: Colours.app_main.withOpacity(0.1),
+                                      borderRadius: BorderRadius.circular(4)
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -352,19 +334,19 @@ class _CompanyDetailState extends State<CompanyDetail> {
                                           crossAxisAlignment: CrossAxisAlignment.center,
                                           children: <Widget>[
                                             Text(
-                                              "在招职位",
+                                              "招聘的职位",
                                               style: TextStyle(
-                                                fontSize: 12,
-                                                color: Colors.grey
+                                                  fontSize: 14,
+                                                  color: Colors.grey
                                               ),
                                             ),
                                             SizedBox(
                                               height: 8,
                                             ),
                                             Text(
-                                           infors == null?"": "${infors["job_num"]}个" ,
+                                              infors == null?"": "${infors["job_num"]}个" ,
                                               style: TextStyle(
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.black87
                                               ),
@@ -383,9 +365,9 @@ class _CompanyDetailState extends State<CompanyDetail> {
                                           crossAxisAlignment: CrossAxisAlignment.center,
                                           children: <Widget>[
                                             Text(
-                                              "共邀面试",
+                                              "已面试过",
                                               style: TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 14,
                                                   color: Colors.grey
                                               ),
                                             ),
@@ -395,7 +377,7 @@ class _CompanyDetailState extends State<CompanyDetail> {
                                             Text(
                                               infors == null?"":  "${int.parse(infors["invite_num"].toString())+1}个" ,
                                               style: TextStyle(
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.black87
                                               ),
@@ -414,9 +396,9 @@ class _CompanyDetailState extends State<CompanyDetail> {
                                           crossAxisAlignment: CrossAxisAlignment.center,
                                           children: <Widget>[
                                             Text(
-                                              "简历处理率",
+                                              "报名确认率",
                                               style: TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 14,
                                                   color: Colors.grey
                                               ),
                                             ),
@@ -426,7 +408,7 @@ class _CompanyDetailState extends State<CompanyDetail> {
                                             Text(
                                               "100%",
                                               style: TextStyle(
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.black87
                                               ),
@@ -437,16 +419,30 @@ class _CompanyDetailState extends State<CompanyDetail> {
 
                                     ],
                                   ),
-                                )
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
+                                ),
 
-                      SizedBox(
-                        height: 30,
-                      ),
+
+
+
+
+//                              Positioned(
+//                                left: 76,
+//                                top: 60,
+//                                child:Row(
+//                                  children: <Widget>[
+//
+//                                    Text(
+//                                      labelStr,
+//                                      style: TextStyle(
+//                                        fontSize: ScreenUtil().setSp(22),
+//                                        color: Color.fromRGBO(151, 151, 151,6),
+//                                      ),
+//                                    ),
+//                                  ],
+//                                )),
+
+
+
 //                      Container(
 //                        height: 40,
 //                        child: ListView.builder(
@@ -508,17 +504,30 @@ class _CompanyDetailState extends State<CompanyDetail> {
 //                          ),
 //                        ],
 //                      ),
-
-                      Text('公司介绍',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                              wordSpacing: 1,
-                              letterSpacing: 1,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87)),
-
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            height: 12,
+                            width: 4,
+                            color: Colours.app_main,
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Text('公司介绍',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                  wordSpacing: 1,
+                                  letterSpacing: 1,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(37, 38, 39, 1))),
+                        ],
+                      ),
                     Html(data: infors== null?"":infors["summary"].toString().replaceAll("查看更多", "")),
 
 //                      Text('公司照片',
@@ -554,27 +563,45 @@ class _CompanyDetailState extends State<CompanyDetail> {
 //                      SizedBox(
 //                        height: 20,
 //                      ),
-                      Text('公司地址',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                              wordSpacing: 1,
-                              letterSpacing: 1,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87)),
+
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            height: 12,
+                            width: 4,
+                            color: Colours.app_main,
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Text('公司地址',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                  wordSpacing: 1,
+                                  letterSpacing: 1,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(37, 38, 39, 1))),
+                        ],
+                      ),
                       SizedBox(
-                        height: 20,
+                        height: 16,
                       ),
                       Stack(
                         alignment: Alignment.center,
                         children: <Widget>[
                           ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            borderRadius: BorderRadius.all(Radius.circular(4)),
                             child: Image.asset('images/map_icon.jpg',
-                                height: 100, fit: BoxFit.cover),
+                                width: double.infinity ,
+                                height: 100, fit: BoxFit.fill),
                           ),
-                          Text(infors == null? "" :infors["address"])
+                          Text(infors == null? "" :infors["address"],style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.white
+                          ),)
                         ],
                       ),
 
@@ -670,20 +697,29 @@ class _CompanyDetailState extends State<CompanyDetail> {
 //                         shrinkWrap: true,
 //                         physics: const NeverScrollableScrollPhysics()
 //                     ),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            height: 12,
+                            width: 4,
+                            color: Colours.app_main,
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Text('在招职位',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                  wordSpacing: 1,
+                                  letterSpacing: 1,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(37, 38, 39, 1))),
+                        ],
+                      ),
                       SizedBox(
                         height: 16,
-                      ),
-                      Text('在招职位',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                              wordSpacing: 1,
-                              letterSpacing: 1,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87)),
-                      SizedBox(
-                        height: 20,
                       ),
                     Container(
                       height: 1,
@@ -733,8 +769,8 @@ class _CompanyDetailState extends State<CompanyDetail> {
 
         Positioned(
           bottom: 0,
-          right: 20,
-          left: 20,
+          right: 0,
+          left: 0,
           child:    SafeArea(
             top: false,
             child: Container(
@@ -804,11 +840,11 @@ class JzComItem extends StatelessWidget {
           continue;
         }
         tipWidget.add( TextTagWidget("$item",
-          backgroundColor: Color(0xFFF0F0F0),
+          backgroundColor: Colors.white,
           margin: EdgeInsets.fromLTRB(0, 0, 8, 8),
           padding: EdgeInsets.fromLTRB(8, 2, 8, 2),
           borderRadius: 2,
-          borderColor: Color(0xFFF0F0F0),
+          borderColor: Colors.black54,
           textStyle: TextStyle(
               color: Colors.black54,
               fontSize: 12
@@ -924,22 +960,22 @@ class JzComItem extends StatelessWidget {
 
               ),
 
-              Container(
-                height: 28,
-                width: 80,
-                decoration: BoxDecoration(
-                    color: Colours.app_main,
-                    borderRadius: BorderRadius.circular(2)
-                ),
-                child: Text(
-                  "报名",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12
-                  ),
-                ),
-                alignment: Alignment.center,
-              )
+//              Container(
+//                height: 28,
+//                width: 80,
+//                decoration: BoxDecoration(
+//                    color: Colours.app_main,
+//                    borderRadius: BorderRadius.circular(2)
+//                ),
+//                child: Text(
+//                  "报名",
+//                  style: TextStyle(
+//                      color: Colors.white,
+//                      fontSize: 12
+//                  ),
+//                ),
+//                alignment: Alignment.center,
+//              )
             ],
           ),
           SizedBox(height: 16,),

@@ -11,7 +11,7 @@ class Colours {
   static const Color bg_color= Color(0xFFfafafa);
   static const Color black_400000= Color(0x40000000);
   static const Color black_212920= Color(0xFF212920);
-static const Color app_main = Color(0xFF3396FB);
+static const Color app_main = Color(0xFFFD5B08);
 static const Color blue_main = Color(0xFF37ABE3);
 static const Color gray_8A8F8A= Color(0xFF8A8F8A);
 static const Color gray_33A4AFA3= Color(0x33A4AFA3);

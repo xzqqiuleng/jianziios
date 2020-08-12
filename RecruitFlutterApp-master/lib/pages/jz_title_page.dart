@@ -91,8 +91,8 @@ class _JZState extends State<JZTitlePage>{
         leading: IconButton(
             icon: Image.asset(
               'images/ic_back_arrow.png',
-              width: 24,
-              height: 24,
+              width: 19,
+              height: 19,
             ),
             onPressed: () {
               Navigator.pop(context);

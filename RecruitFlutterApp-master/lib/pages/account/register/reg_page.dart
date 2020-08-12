@@ -107,6 +107,13 @@ class _ForgetState extends State<RegPage>{
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
+                            Text("注  册",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
                             SizedBox(height: 50,),
                             LogRegTextField(
 
@@ -123,7 +130,7 @@ class _ForgetState extends State<RegPage>{
                               children: <Widget>[
                                 LogRegTextField(
 
-                                  label: "请输入验证码",
+                                  label: "验证码",
                                   controller:  _codeController,
                                   textInputAction: TextInputAction.next,
                                   textInputType: TextInputType.number,
@@ -165,7 +172,7 @@ class _ForgetState extends State<RegPage>{
 
                             ),
 
-                            SizedBox(height: 30,),
+                            SizedBox(height: 50,),
                             GestureDetector(
 
                                 onTap: () => setNewPd(),
@@ -178,7 +185,7 @@ class _ForgetState extends State<RegPage>{
                                   child: Card(
                                       color: Colours.app_main,
                                       shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(6)
+                                          borderRadius: BorderRadius.circular(30)
                                       ),
                                       child: Center(
                                         child:Text("注册",

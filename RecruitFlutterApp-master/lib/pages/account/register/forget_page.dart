@@ -76,6 +76,13 @@ class _ForgetState extends State<ForgetPage>{
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
+                            Text("设置新密码",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
                             SizedBox(height: 50,),
                             LogRegTextField(
 
@@ -92,7 +99,7 @@ class _ForgetState extends State<ForgetPage>{
                               children: <Widget>[
                                 LogRegTextField(
 
-                                  label: "请输入验证码",
+                                  label: "验证码",
                                   controller:  _codeController,
                                   textInputAction: TextInputAction.next,
                                   textInputType: TextInputType.number,
@@ -134,7 +141,7 @@ class _ForgetState extends State<ForgetPage>{
 
                             ),
 
-                            SizedBox(height: 30,),
+                            SizedBox(height: 50,),
                             GestureDetector(
 
                                 onTap: () => setNewPd(),
@@ -147,10 +154,10 @@ class _ForgetState extends State<ForgetPage>{
                                   child: Card(
                                       color: Colours.app_main,
                                       shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(6)
+                                          borderRadius: BorderRadius.circular(30)
                                       ),
                                       child: Center(
-                                        child:Text("确认",
+                                        child:Text("确定",
                                           textAlign: TextAlign.center,
 
                                           style: TextStyle(

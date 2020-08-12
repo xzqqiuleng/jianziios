@@ -49,50 +49,39 @@ class HomeHeadPlan extends StatelessWidget {
                 },
                 child:
                 Container(
-                  margin: EdgeInsets.fromLTRB(14, 0, 14, 0),
+                    margin:  EdgeInsets.fromLTRB(0, 0, 14, 10),
                   height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(model.picture),
-                      fit: BoxFit.fill,
-                    ),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Stack(
-                        children: <Widget>[
-                          Positioned(
-                            left: 16,
-                            top:20,
-                            child: Text(
+                  child: Card(
+                    margin:  EdgeInsets.fromLTRB(14, 0, 0, 0),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Image.asset(model.img,height: 40,width: 40,),
+                            SizedBox(width: 10),
+                            Text(
                               model.link,
-                               style: TextStyle(
-                                 fontSize: 16,
-                                 color: Colors.white,
-                                 fontWeight: FontWeight.bold,
-
-                               ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 16,
-                            bottom:20,
-                            child: Text(
-                              model.txt,
                               style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.white.withOpacity(0.7),
-
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
 
                               ),
+
                             ),
-                          ),
-                          Positioned(
-                            right: 6,
-                            bottom:6,
-                            child: Image.asset(model.img,height: 30,width: 30,),
-                          ),
-                        ],
-                  ),
+
+                          ],
+                        ),
+                        Positioned(
+                          right: 0,
+                          top:0,
+                          child: Image.asset("images/jzjb.png",height: 15,width: 30,),
+                        ),
+                      ],
+                    ),
+                  )
                 ),
         )
         );
@@ -170,7 +159,7 @@ class HomeHeadPlan extends StatelessWidget {
                                 width: 10,
                               ),
                               Text(
-                                  "搜索兼职，看一看",
+                                  "兼职工作每天更新，搜一搜吧",
                                 style: TextStyle(
                                   color: Colors.grey
                                 ),
